@@ -81,11 +81,20 @@
     height: 358px;
     border-radius: 8px;
   }
+  .grayscale{
+    filter: grayscale(100%);
+  }
 </style>
 
 <script>
-  alert('hello')
   console.log('success')
+var mbimage = document.querySelectorAll(".memberimage")
+mbimage.forEach(function(image){
+  image.addEventListener('click', function(){
+    alert('hello');
+  });
+});
+
 </script>
 
 <body>
