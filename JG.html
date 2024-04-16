@@ -4,12 +4,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
   <title>정근소개</title>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
+    import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+          import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    // Your web app's Firebase configuration
+    // 파이어 베이스 연동
+    const firebaseConfig = {
+      apiKey: "AIzaSyA84CfIIHMFrm3IrXXQ1kbJbCnOJiUfMUE",
+      authDomain: "teamintro-15000.firebaseapp.com",
+      projectId: "teamintro-15000",
+      storageBucket: "teamintro-15000.appspot.com",
+      messagingSenderId: "213318217353",
+      appId: "1:213318217353:web:13bda26185a1b6cea82058",
+      measurementId: "G-JDLMJ32ZC0"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  
 </head>
+
 
 <style>
   @font-face {
@@ -20,7 +45,7 @@
   }
 
   .membermain {
-
+    
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -58,11 +83,16 @@
   }
 </style>
 
+<script>
+  alert('hello')
+  console.log('success')
+</script>
+
 <body>
   <!-- 네비바 -->
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand">Java Spring 5기</a>
+      <a class="navbar-brand"> <i class="bi bi-filetype-java"></i> Java Spring 5기</a>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -72,8 +102,8 @@
 
 
   <div class="mainimage">
-    <h1 style="color: wheat;"> Introduce Our Team </h1>
-    <h2 style="color: wheat;"><i class="bi bi-emoji-smile-upside-down-fill"></i> 왜 시비조 <i
+    <h1 style="color: wheat; font-size: 62px;"> Introduce Our Team </h1>
+    <h2 style="color: wheat; font-size:  50px;"><i class="bi bi-emoji-smile-upside-down-fill"></i> 왜 시비조 <i
         class="bi bi-emoji-smile-fill"></i>(12조)</h2>
   </div>
 
