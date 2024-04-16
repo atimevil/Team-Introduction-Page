@@ -68,6 +68,7 @@
     width: 400px;
     height: 300px;
     border-radius: 0 150px 150px 0;
+    margin-left: 0px;
     margin-right: 50px;
   }
 
@@ -125,7 +126,12 @@
     var mbimage = document.querySelectorAll(".memberimage")
     mbimage.forEach(function (image) {
       image.addEventListener('click', function () {
-        alert('구현중')
+        image.classList.remove('grayscale');
+        mbimage.forEach(function (otherimage) {
+          if (otherimage !== image) {
+            otherimage.classList.add('grayscale');
+          }
+        });
       });
     });
   });
@@ -192,10 +198,10 @@
         alt="">
       <div style="width: 80%;">
         <li style="font-size: 40px; font-family: 'YEONGJUPunggiGinsengTTF'"> 이름: 케로로 </li>
-        <li style="font-size: 25px; font-family: 'YEONGJUSeonbiTTF';"> 설명: 불라불라불라불라 불라불라부랍루바랍ㅈ렂란ㅁ러ㅚㄴㅁㅇㅎ쟈ㅕㄷㅇ고너마ㅗㅇ너맣ㅇㄴㅁㅇ
-          불라불라불라불라 불라불라불라불라 불라불라불라불라
-          불라불라불라불라 불라불라불라불라 불라불라불라불라 불라불라불라불라 불라불라불라불라 불라불라불라불라 불라불라불라불라 불라불라불라불라 불라불라불라불라 불라불라불라불라 불라불라불라불라 불라불라불라불라
-          불라불라불라불라 불라불라불라불라 불라불라불라불라 불라불라불라불라 불라불라불라불라</li>
+        <li style="font-size: 25px; color: green; font-family: 'YEONGJUSeonbiTTF';">
+          설명:케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로
+          케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로케로
+        </li>
     </ul>
   </div>
   </div>
