@@ -12,6 +12,15 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>왜시비조?</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+        
+        * {
+            font-family: "Noto Sans KR", sans-serif;
+        }
+
+      
+
+
         .mainpage {
             background-image: url(https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_640.jpg);
             background-position: center;
@@ -20,12 +29,11 @@
 
         }
 
-        .profile {
+        .small_profile {
             border-radius: 50%;
             background-color: wheat;
             width: 150px;
             height: 150px;
-            margin-top: 100px;
             box-shadow: 10px 10px 20px gainsboro;
 
         }
@@ -46,10 +54,15 @@
             box-shadow: 20px 14px 20px grey;
         }
     </style>
+    <script>
+        function small_profile_click()  {
+            filter:grayscale(100%);
+        }
+    </script>
 </head>
 
 <body>
-    #네비게이션바
+    <!--네비게이션바-->
     <div class="top bar">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -99,19 +112,30 @@
         </nav>
     </div>
 
-    #썸네일
+    <!--썸네일-->
     <div class="mainpage">
 
     </div>
 
-    # 프로필바
-    <div class="container text-center" style="min-width: 1000px; margin-bottom: 100px;">
+     <!--프로필바-->
+    <div class="container text-center" style="min-width: 1000px; margin-bottom: 100px; margin-top: 100px;">
         <div class="row">
 
+            <div class="col" style="text-align: center;" >
+
+
+                <img class="small_profile" src="https://media.bunjang.co.kr/product/228746928_1_1688282259_w360.jpg"
+                    alt="Emily" onclick='small_profile_click()'>
+                <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+                    <p class="text-center" style="auto">UI/UX<br>Emily</p>
+                </div>
+
+
+            </div>
             <div class="col" style="text-align: center;">
 
 
-                <img class="profile" src="https://media.bunjang.co.kr/product/228746928_1_1688282259_w360.jpg"
+                <img class="small_profile" src="https://media.bunjang.co.kr/product/228746928_1_1688282259_w360.jpg"
                     alt="Emily">
                 <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
                     <p class="text-center" style="auto">UI/UX<br>Emily</p>
@@ -122,7 +146,7 @@
             <div class="col" style="text-align: center;">
 
 
-                <img class="profile" src="https://media.bunjang.co.kr/product/228746928_1_1688282259_w360.jpg"
+                <img class="small_profile" src="https://media.bunjang.co.kr/product/228746928_1_1688282259_w360.jpg"
                     alt="Emily">
                 <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
                     <p class="text-center" style="auto">UI/UX<br>Emily</p>
@@ -133,7 +157,7 @@
             <div class="col" style="text-align: center;">
 
 
-                <img class="profile" src="https://media.bunjang.co.kr/product/228746928_1_1688282259_w360.jpg"
+                <img class="small_profile" src="https://media.bunjang.co.kr/product/228746928_1_1688282259_w360.jpg"
                     alt="Emily">
                 <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
                     <p class="text-center" style="auto">UI/UX<br>Emily</p>
@@ -144,7 +168,7 @@
             <div class="col" style="text-align: center;">
 
 
-                <img class="profile" src="https://media.bunjang.co.kr/product/228746928_1_1688282259_w360.jpg"
+                <img class="small_profile" src="https://media.bunjang.co.kr/product/228746928_1_1688282259_w360.jpg"
                     alt="Emily">
                 <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
                     <p class="text-center" style="auto">UI/UX<br>Emily</p>
@@ -152,24 +176,13 @@
 
 
             </div>
-            <div class="col" style="text-align: center;">
 
-
-                <img class="profile" src="https://media.bunjang.co.kr/product/228746928_1_1688282259_w360.jpg"
-                    alt="Emily">
-                <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-                    <p class="text-center" style="auto">UI/UX<br>Emily</p>
-                </div>
-
-
-            </div>
-           
 
 
         </div>
     </div>
 
-    # 프로필 상세
+    <!--프로필 상세-->
     <div class="row"
         style="background-color: gainsboro; height: 500px; display: flex; align-items:center; min-width: 1500px;">
 
