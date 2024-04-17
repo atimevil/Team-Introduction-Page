@@ -37,3 +37,18 @@ $('#kevinProfileImg').click(() => {
     $('#kevinProfileImg').css('filter', 'grayscale(0%)');
     $('#kevinIntro').toggle();
 });
+
+
+/*화면상단이동버튼 시작*/
+
+
+const $Top_btn = document.querySelector(".MoveTop_btn");
+
+//버튼 클릭시 페이지 상단으로 이동
+$Top_btn.onclick=()=>{
+    window.scrollTo({
+        top: 0,    //페이지 총 Height
+        behavior: "smooth"
+    });
+};
+/*화면상단이동버튼 끝*/

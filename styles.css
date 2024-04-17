@@ -89,3 +89,30 @@ footer {
     margin-bottom: 50px;
     padding-left: 1rem;
 }
+
+/*화면화단 이동버튼 시작*/
+.MoveTop_btn{
+    width: 75px;
+    height: 75px;
+    display: flex;
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+  padding: 1rem 1rem;
+  background: gainsboro;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: .3s;
+  color: black;
+  margin-right: .4rem;
+  opacity: 75%;
+  
+  
+}
+
+.MoveTop_btn:hover{
+    background: grey;
+}
+/*화면화단 이동버튼 끝*/
