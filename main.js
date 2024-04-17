@@ -1,3 +1,19 @@
+/*스크롤상태바*/
+$(window).scroll(function() {
+
+    var wins = $(this).scrollTop();
+    var hei = $('.all-content').outerHeight();
+    var hei2 = $(window).outerHeight();
+    var height = hei - hei2;
+    var bar = (wins / height) * 100;
+  
+    $('#myBar').css('width', bar + '%');
+  
+  });
+
+
+
+
 $(document).ready(function () {
     $('.intro').hide();
     $('.profile-img').css('filter', 'grayscale(100%)');
@@ -40,9 +56,7 @@ $('#kevinProfileImg').click(() => {
 
 
 /*화면상단이동버튼*/
-
-
-const $Top_btn = document.querySelector(".MoveTop_btn");
+const $Top_btn = document.querySelector(".MoveTop-btn");
 
 //버튼 클릭시 페이지 상단으로 이동
 $Top_btn.onclick = () => {

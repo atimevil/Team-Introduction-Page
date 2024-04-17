@@ -2,6 +2,27 @@
     font-family: Gilroy;
 }
 
+/*스크롤상태바*/
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #f1f1f1;
+  }
+  .progress-container {
+    width: 100%;
+    height: 3px;
+    background: #ccc;
+  }
+  .progress-bar {
+    height: 3px;
+    background: #20237d;
+    width: 0%;
+    transition: all .75s ease;
+  }
+
+
 #caption {
     position: absolute;
     left: 10%;
@@ -92,7 +113,7 @@ footer {
 }
 
 /*화면상단 이동버튼 시작*/
-.MoveTop_btn {
+.MoveTop-btn {
     width: 75px;
     height: 75px;
     display: flex;
@@ -113,7 +134,7 @@ footer {
 
 }
 
-.MoveTop_btn:hover {
+.MoveTop-btn:hover {
     background: grey;
 }
 
