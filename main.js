@@ -109,7 +109,7 @@ $('#arialProfileBox').mouseout(function() {
 });
 $('#kevinProfileBox').mouseover(function() {
     $(this).css('transform', 'scale(1.2)');
-    if($('#johnProfileName').css('text-decoration-line') == 'none') {
+    if($('#kevinProfileName').css('text-decoration-line') == 'none') {
         $('#kevinProfileImg').css('filter', 'grayscale(70%)');
     } else{
         $('#kevinProfileImg').css('filter', 'grayscale(0%)');
