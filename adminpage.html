@@ -124,7 +124,17 @@
                     <div class="profile-info">
                         <h3>${name}</h3>
                         <p>${job}</p>
-                        <p>${description}</p>
+                    </div>
+                    <div class="intros">
+                        <div id="dynamic" class="intro"> 
+                            <div class="intro-title">
+                                <strong>${job}</strong>
+                                <em>${name}</em>
+                            </div>
+                            <div class="intro-txt">
+                                <p>${description}</p>
+                            </div>
+                        </div>
                     </div>
                 </li>
             </ul>`;
@@ -167,7 +177,7 @@
         </div>
     </div>
     <div class="mycards">
-        <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
+        <div id="card">
         </div>
     </div>
 

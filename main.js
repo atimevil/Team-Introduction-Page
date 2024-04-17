@@ -12,8 +12,9 @@ $('.profile-img').click(function () {
     $('html, body').animate({
         scrollTop: $(this).offset().top - 100
     }, 0, 'linear');
+
 });
-$('#johnProfileImg').click(() => {
+$('#johnProfileImg').click(() => { // 이거 어케 동적주지 ... name + profileImg
     $('.intro').hide();
     $('.profile-img').css('filter', 'grayscale(100%)');
     $('#johnProfileImg').css('filter', 'grayscale(0%)');
