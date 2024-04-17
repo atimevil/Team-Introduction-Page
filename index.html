@@ -69,7 +69,7 @@
         let temp_html = `
         <ul class="team-list">
             <li>
-                <div id = "${name}ProfileImg" class="profile-img tabindex="0"" >
+                <div id = "${name}ProfileImg" class="profile-img" tabindex="0"" >
                     <img src="${image}" alt="">
                 </div>
                 <div class="profile-info">
@@ -88,8 +88,6 @@
     $(document).ready(function () {
         $('.intro').hide();
         $('.profile-img').css('filter', 'grayscale(100%)');
-        $('#johnProfileImg').css('filter', 'grayscale(0%)');
-        $('#johnIntro').show();
         $('#carouselExampleIndicators').carousel({
             interval: 5000,
             ride: "carousel"
@@ -100,7 +98,7 @@
             scrollTop: $(this).offset().top - 100
         }, 0, 'linear');
     });
-    $(`#${name}Img`).click(() => {
+    $(`#${name}ProfileImg`).click(() => {
         $('.intro').hide();
         $('.profile-img').css('filter', 'grayscale(100%)');
         $(`#${name}ProfileImg`).css('filter', 'grayscale(0%)');
