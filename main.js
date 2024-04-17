@@ -33,6 +33,19 @@ function calllate() {
 
             $(`#Intro${i}`).toggle();
             $(`#profileImg${i}`).css('filter', 'grayscale(0%)');
+
+            // 동적 변수가 생겨서  for 문으로 반복문 만듦
+            // $('#kevinProfileImg').click(() => {
+            //     $('.intro').hide();
+            //     $('.profile-img').css('filter', 'grayscale(100%)');
+            //     $('#kevinProfileImg').css('filter', 'grayscale(0%)');
+            //     $('.profile-name').css('text-decoration', 'none');
+            //     $('#kevin').css('text-decoration', 'underline');
+            //     $('#kevinIntro').toggle();
+            // });
+            
         })
     }
+    
 }
+
