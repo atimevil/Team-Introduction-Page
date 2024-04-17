@@ -88,11 +88,13 @@
             let image = $('#image').val();
             let name = $('#name').val();
             let description = $('#description').val();
+            let job = $('#job').val();
 
             let doc = {
                 'image': image,
                 'name': name,
                 'description': description,
+                'job' : job,
             };
             await addDoc(collection(db, "team-member"), doc);
             alert('저장 완료!');
@@ -106,6 +108,7 @@
 
             let image = row['image'];
             let name = row['name'];
+            let job = row['job'];
             let description = row['description'];
             let temp_html = `
             <div class="col">
@@ -114,6 +117,7 @@
                             class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">${name}</h5>
+                            <h5 class="card-title">${job}</h5>
                             <p class="card-text">${description}</p>
                         </div>
                     </div>
@@ -142,6 +146,10 @@
         <div class="form-floating mb-3">
             <input type="email" class="form-control" id="name" placeholder="name@example.com">
             <label for="floatingInput">팀원 이름</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="job" placeholder="name@example.com">
+            <label for="floatingInput">팀원 직책</label>
         </div>
         <div class="form-floating mb-3">
             <input type="email" class="form-control" id="description" placeholder="name@example.com">
