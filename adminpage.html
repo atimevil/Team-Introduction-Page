@@ -111,17 +111,18 @@
             let job = row['job'];
             let description = row['description'];
             let temp_html = `
-            <div class="col">
-                    <div class="card h-100">
-                        <img src="${image}"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">${name}</h5>
-                            <h5 class="card-title">${job}</h5>
-                            <p class="card-text">${description}</p>
+            <ul class="team-list">
+                <li>
+                    <div class="profile-img">
+                        <img src="${image}" alt="">
                         </div>
+                    <div class="profile-info">
+                        <h3>${name}</h3>
+                        <p>${job}</p>
+                        <p>${description}</p>
                     </div>
-                </div>`;
+                </li>
+            </ul>`;
             $('#card').append(temp_html);
         });
 
