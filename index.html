@@ -38,6 +38,9 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
+    //모듈안에서 전역변수 선언 (모듈밖에서는(전역변수 선언시 윈도우가 생략되어있음) )
+
+    // 시간 지연때문에 안됨, js파일을 먼저 불러옴
 
     let docs = await getDocs(collection(db, "team-member"));
     docs.forEach((doc) => {
@@ -47,10 +50,13 @@
         let name = row['name'];
         let job = row['job'];
         let description = row['description'];
+        var memberImages = document.querySelectorAll('.profile-img');
+        //window 를 붙이면 전역 변수가 돼서 모듈안에서도 다른 파일에서 접근 가능
+        window.membernumbers = memberImages.length + 1;
         let temp_html = `
             <ul class="team-list">
                 <li>
-                    <div class="profile-img">
+                    <div id = "profileImg${window.membernumbers}" class="profile-img">
                         <img src="${image}" alt="">
                     </div>
                     <div class="profile-info">
@@ -60,7 +66,24 @@
                 </li>
             </ul>`;
         $('#teamList').append(temp_html);
+
+        //설명칸 추가
+        $('.intros').append(` <div id="Intro${window.membernumbers}" class="intro">
+            <div class="intro-title">
+                <strong>${job}</strong>
+                <em>David</em>
+            </div>
+            <div class="intro-txt">
+                ${description}
+                </div>
+        </div>`)
+
+        // 함수를 calllate로 묶어서 늦게 부름 -> main.js가 실행 된 후 함수를 수동으로 호출
+        calllate();
     });
+
+
+
 </script>
 
 <body>
@@ -114,7 +137,7 @@
         </div>
     </div>
     <div class="container mt-5">
-        <ul id="" class="team-list">
+        <ul id="teamList" class="team-list">
             <li>
                 <div id="profileImg1" class="profile-img" tabindex="0"><img
                         src="https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg" alt="John"></div>
@@ -233,7 +256,8 @@
         © 2024
     </footer>
 
-    <script type="module" src="./main.js"></script>
+    <!-- 모듈 지워야함, 이유: 모듈선언을 한 자바 스크립트 내부에서는 작성된 이벤트들이 실행되지 않습니다 실행을 위해서는 별도로 export를 해야됨 그래서 지워야함(원하) -->
+    <script src="./main.js"></script>
 </body>
 
 </html>
