@@ -1,0 +1,91 @@
+* {
+    font-family: Gilroy;
+}
+
+#caption {
+  position: absolute;
+  left: 10%;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+  color: white;
+  
+}
+
+.carousel-item img {
+    height: 500px;
+    width: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.team-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #2c2a52;
+}
+
+.team-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.team-list img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.team-list h3, .team-list p {
+    margin: 5px 0;
+}
+
+.profile-img {
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.profile-img img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.intros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 100px;
+    background-color: #f9f9f9;
+    margin-top: 50px;
+}
+
+.intro-title strong {
+    font-size: 18px;
+    font-weight: 300;
+    color: #2c2a52;
+    display: block;
+}
+
+.intro-title em {
+    margin-top: 14px;
+    display: block;
+    font-size: 54px;
+    font-weight: 500;
+    font-style: normal;
+    color: #2c2a52;
+}
+
+.intro-txt span {
+    font-weight: 500;
+    color: #4b49a1;
+}
+
+footer {
+    margin-bottom: 50px;
+    padding-left: 1rem;
+}
