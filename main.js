@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $('.intro').hide();
     $('.profile-img').css('filter', 'grayscale(100%)');
-    $('#johnProfileImg').css('filter', 'grayscale(0%)');
-    $('#johnIntro').show();
+    $('#johnProfileImg').css('filter', 'grayscale(0%)'); // 얘도 바꿔야 됨
+    $('#johnIntro').show(); // 애도 바꿔야 됨
     $('#carouselExampleIndicators').carousel({
         interval: 5000,
         ride: "carousel"
