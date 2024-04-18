@@ -136,6 +136,13 @@
             let name = row['name'];
             let job = row['job'];
             let description = row['description'];
+            let memberMbti = row['memberMbti'];
+            let memberAge = row['memberAge'];
+            let memberHobby = row['memberHobby'];
+            let memberStrength = row['memberStrength'];
+            let memberStyle = row['memberStyle'];
+            let memberQuotation = row['memberQuotation'];
+            let memberEmail = row['memberEmail'];
             let temp_html = `
             <ul class="team-list">
                 <li>
@@ -145,6 +152,14 @@
                     <div class="profile-info">
                         <h3>${name}</h3>
                         <p>${job}</p>
+                        <p>${description}</p>
+                        <p>${memberMbti}</p>
+                        <p>${memberAge}</p>
+                        <p>${memberHobby}</p>
+                        <p>${memberStrength}</p>
+                        <p>${memberStyle}</p>
+                        <p>${memberQuotation}</p>
+                        <p>${memberEmail}</p>
                     </div>
                 </li>
             </ul>`;
