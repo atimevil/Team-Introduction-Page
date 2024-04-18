@@ -56,8 +56,8 @@
                     <div id = "profileImg${window.membernumbers}" class="profile-img">
                         <img src="${image}" alt="">
                     </div>
-                    <div class="profile-info">
-                        <h3>${name}</h3>
+                    <div class="profile-info" >
+                        <h3 class = profile-info${window.membernumbers}>${name}</h3>
                         <p>${job}</p>
                     </div>
                 </li>
@@ -78,19 +78,6 @@
         // 함수를 calllate로 묶어서 늦게 부름 -> main.js가 실행 된 후 함수를 수동으로 호출
         calllate();
     });
-
-    /*화면상단이동버튼*/
-    const $Top_btn = document.querySelector(".MoveTop-btn");
-
-    //버튼 클릭시 페이지 상단으로 이동
-    $Top_btn.onclick = () => {
-        window.scrollTo({
-            top: 0,    //페이지 총 Height
-            behavior: "smooth"
-        });
-    };
-
-
 
 </script>
 
@@ -145,18 +132,6 @@
                 </div>
             </div>
 
-            
-<!--     <div class="container mt-5">
-        <ul class="team-list" id="teamListBox">
-            <li id="johnProfileBox">
-                <div id="johnProfileImg" class="profile-img" tabindex="0"><img
-                        src="https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg" alt="John"></div>
-                <h3 id="johnProfileName" class="profile-name">John</h3>
-                <p>Frontend 개발</p>
-            </li>
-        </ul>
-    </div> -->
-    
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
