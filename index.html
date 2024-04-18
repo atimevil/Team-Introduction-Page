@@ -64,6 +64,13 @@
             // window 를 붙이면 전역 변수가 돼서 모듈안에서도 다른 파일에서 접근 가능
             window.membernumbers = memberImages.length + 1;
             // **********li id 추가 및 프로필이름 id 추가
+
+            var blogLogoUrl = '';
+            if (memberEmail.includes('tistory'))
+                blogLogoUrl = 'https://i.namu.wiki/i/Jz0MFNR7_7LHx1Yda0Hy6929g3BD5fWmaARdUMMFPkFIAVC_ewY7BEcoIGhepmTKRBKmSxRSUBjI7pklIZLaAA.svg';
+            else if (memberEmail.includes('velog'))
+                blogLogoUrl = 'https://pbs.twimg.com/profile_images/1228368893321736193/Ov0og7E8_400x400.jpg';
+
             let member_html = `
             <ul class="team-list">
                 <li id="profileBox${window.membernumbers}" >
@@ -83,16 +90,17 @@
             <div id="Intro${window.membernumbers}" class="intro" style="margin-left: 357px;width:600px; height:400px;">
                 <div class="intro-title">
                     <strong>${job}</strong>
-                    <em>${name}</em>
+                    <em>${name} <a href="${memberEmail}"><img class="blog-logo" src="${blogLogoUrl}"></a></em>
+                    
                 </div>
                 <div class="intro-txt">
-                    <p>나이: ${memberAge}</p>
-                    <p>MBTI: ${memberMbti}</p>
-                    <p>취미: ${memberHobby}</p>
-                    <p>장점: ${memberStrength}</p>
-                    <p>협업 스타일: ${memberStyle}</p>
-                    <p>좌우명: ${memberQuotation}</p>
-                    <p>이메일: ${memberEmail}</p>
+                    <!-- <p><span>나이</span>&emsp;${memberAge}</p> -->
+                    <p><span>MBTI</span>&ensp;${memberMbti}</p>
+                    <p><span>취미</span>&ensp;${memberHobby}</p>
+                    <p><span>장점</span>&ensp;${memberStrength}</p>
+                    <p><span>협업 스타일</span>&ensp;${memberStyle}</p>
+                    <p><span>좌우명</span>&ensp;${memberQuotation}</p>
+                    <!-- <p><span>이메일</span>&ensp;${memberEmail}</p> -->
                 </div>
                 <div>
                     <img class="intro-image" src="${image}" alt="">
