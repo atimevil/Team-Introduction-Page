@@ -6,6 +6,102 @@ html, body {
     overflow-x: hidden;
 }
 
+/* splash screen */
+.splash-screen {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    font-size: 24px;
+}
+
+.left-half {
+    background-color: white;
+    color: black;
+    width: 27.5%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    animation: slideIn 1s forwards;
+    animation-delay: 1s;
+}
+
+.right-half {
+    background-color: #4b49a1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    animation: slideIn 1.5s forwards;
+}
+
+.splash-screen-caption {
+    color: white !important;
+}
+
+.splash-screen-caption span{
+    color: #4b49a1 !important;
+}
+
+.splash-content {
+    position: relative;
+    z-index: 20;
+}
+
+.hide-splash {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 2s ease, visibility 2s ease;
+}
+
+.splash-screen-caption {
+    font-size: 50px;
+    font-weight: 900;
+    font-style: italic;
+    color: black;
+    letter-spacing: 20px;
+    word-spacing: 10px;
+}
+
+.slide-out-left {
+    animation: slideOutLeft 0.5s forwards;
+}
+
+.slide-out-right {
+    animation: slideOutRight 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        right: -100%;
+    }
+    to {
+        right: 0%;
+    }
+}
+
+/* @keyframes slideOutLeft {
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideOutRight {
+    to {
+        transform: translateX(100%);
+    }
+} */
+
+
 /* 네비게이션 바 */
 .navbar {
     position: absolute;
@@ -21,6 +117,7 @@ html, body {
 
 .navbar-brand {
     color: white !important;
+    font-style: italic;
     font-size: 30px;
     font-weight: 900;
 }
@@ -53,18 +150,22 @@ html, body {
     z-index: 1;
     width: 100%;
     background-color: #f1f1f1;
-  }
-  .progress-container {
+}
+.progress-container {
     width: 100%;
     height: 3px;
     background: #ccc;
-  }
-  .progress-bar {
+}
+.progress-bar {
     height: 3px;
     background: #2c2a52;
     width: 0%;
     transition: all .75s ease;
-  }
+}
+
+.all-content {
+    display: none;
+}
 
 
 #caption {

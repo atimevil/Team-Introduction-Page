@@ -101,8 +101,23 @@
             });
         });
     </script>
+</head>
 
 <body>
+    <div class="splash-screen">
+        <div class="left-half"></div>
+        <div class="right-half"></div>
+        <div class="splash-content">
+            <div class="splash-screen-caption">
+                <p><span>W</span>in together</p>
+                <p><span>H</span>eart united</p>
+                <p><span>Y</span>es to challenges</p>
+                <p><span>1</span> vision</p>
+                <p><span>2</span>wice the passion</p>
+            </div>
+        </div>
+    </div>
+
     <!--스크롤상태바-->
     <div class="header">
         <div class="progress-container">
@@ -192,7 +207,7 @@
         <!-- 팀원 이미지, 직책 -->
         <div class="container mt-5">
             <ul id="teamList" class="team-list">
-                
+
             </ul>
         </div>
 
@@ -201,28 +216,24 @@
 
         </div>
         <footer class="pt-3 mt-4 text-body-secondary  border-top">
-            © 2024
+            © 2024 
         </footer>
-
-        <!--<div class="container mt-5">
-        <ul class="team-list" id="teamListBox">
-            <li id="johnProfileBox">
-                <div id="johnProfileImg" class="profile-img" tabindex="0"><img
-                        src="https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg" alt="John"></div>
-                <h3 id="johnProfileName" class="profile-name">John</h3>
-                <p>Frontend 개발</p>
-            </li>
-        </ul>
-        </div> -->
-
-        <!--화면상단이동버튼-->
         <img src="https://i.ibb.co/FHc8FhZ/image.png" class="MoveTop-btn">
     </div>
-
-
-    <!-- 모듈 지워야함, 이유: 모듈선언을 한 자바 스크립트 내부에서는 작성된 이벤트들이 실행되지 않습니다 실행을 위해서는 별도로 export를 해야됨 그래서 지워야함(원하) -->
     <script src="./main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.splash-screen').click(function () {
+                $('.left-half').addClass('slide-out-left');
+                $('.right-half').addClass('slide-out-right');
 
+                setTimeout(function () {
+                    $('.splash-screen').remove();
+                    $('.all-content').css('display', 'block');
+                }, 800);
+            });
+        });
+    </script>
 </body>
 
 </html>
