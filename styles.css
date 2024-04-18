@@ -6,6 +6,43 @@ html, body {
     overflow-x: hidden;
 }
 
+/* 네비게이션 바 */
+.navbar {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    background-color: transparent;
+    margin: 30px;
+}
+
+#navbarNav {
+    margin-right: 30px;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 20px;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-underline-offset: 5px;
+}
+
+#ourPeople {
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-underline-offset: 5px;
+}
+
+.nav-link {
+    color: white !important;
+}
+
 
 /*스크롤상태바*/
 .header {
