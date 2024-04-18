@@ -35,8 +35,7 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        //모듈안에서 전역변수 선언 (모듈밖에서는(전역변수 선언시 윈도우가 생략되어있음) )
-
+        // 모듈안에서 전역변수 선언 (모듈밖에서는(전역변수 선언시 윈도우가 생략되어있음) )
         // 시간 지연때문에 안됨, js파일을 먼저 불러옴
 
         let docs = await getDocs(collection(db, "team-member"));
@@ -53,13 +52,11 @@
             let memberStyle = row['memberStyle'];
             let memberQuotation = row['memberQuotation'];
             let memberEmail = row['memberEmail'];
-
-
             var memberImages = document.querySelectorAll('.profile-img');
-            //window 를 붙이면 전역 변수가 돼서 모듈안에서도 다른 파일에서 접근 가능
+            // window 를 붙이면 전역 변수가 돼서 모듈안에서도 다른 파일에서 접근 가능
             window.membernumbers = memberImages.length + 1;
-            //**********li id 추가 및 프로필이름 id 추가
-            let temp_html = `
+            // **********li id 추가 및 프로필이름 id 추가
+            let member_html = `
             <ul class="team-list">
                 <li id="profileBox${window.membernumbers}" >
                     <div id="profileImg${window.membernumbers}" class="profile-img" >
@@ -71,32 +68,28 @@
                     </div>
                 </li>
             </ul>`;
-            $('#teamList').append(temp_html);
+            $('#teamList').append(member_html);
 
-            //설명칸 추가
+            // 설명칸 추가
             $('.intros').append(` 
-            
             <div id="Intro${window.membernumbers}" class="intro" style="margin-left: 357px;width:600px; height:400px;">
-            
-            <div class="intro-title">
+                <div class="intro-title">
                     <strong>${job}</strong>
                     <em>${name}</em>
-            </div>
-            
-                <div class="intro-txt">
-                    <p> 나이:  ${memberAge}</p>
-                    <p> MBTI: ${memberMbti}</p>
-                    <p> 취미: ${memberHobby}</p>
-                    <p>   장점:  ${memberStrength}</p>
-                    <p> 협업 스타일:  ${memberStyle}</p>
-                    <p>좌우명: ${memberQuotation}</p>
-                    <p> 이메일: ${memberEmail}</p>
                 </div>
-            <div>
-                <img class="introimage" src="${image}" alt="">
+                <div class="intro-txt">
+                    <p>나이: ${memberAge}</p>
+                    <p>MBTI: ${memberMbti}</p>
+                    <p>취미: ${memberHobby}</p>
+                    <p>장점: ${memberStrength}</p>
+                    <p>협업 스타일: ${memberStyle}</p>
+                    <p>좌우명: ${memberQuotation}</p>
+                    <p>이메일: ${memberEmail}</p>
+                </div>
+                <div>
+                    <img class="introimage" src="${image}" alt="">
+                </div>
             </div>
-            </div>
-            
             `)
 
             // 함수를 calllate로 묶어서 늦게 부름 -> main.js가 실행 된 후 함수를 수동으로 호출
@@ -116,10 +109,10 @@
 
         $('.wip').click(() => alert('죄송합니다. 아직 준비 중인 페이지입니다.'));
 
-        /*화면상단이동버튼*/
-        $(".MoveTop-btn").click(() => {
+        /* 화면 상단 이동 버튼*/
+        $("#scrollToTopBtn").click(() => {
             window.scrollTo({
-                top: 0,    //페이지 총 Height
+                top: 0,
                 behavior: "smooth"
             });
         });
@@ -141,17 +134,15 @@
         </div>
     </div>
 
-    <!--스크롤상태바-->
+    <!-- 스크롤 상태 바 -->
     <div class="header">
         <div class="progress-container">
             <div class="progress-bar" id="myBar"></div>
         </div>
     </div>
 
-
     <div class="all-content">
-
-        <!--메인슬라이드-->
+        <!-- 메인 슬라이드 -->
         <div class="main">
             <nav class="navbar navbar-expand-lg navbar-light fixed-top">
                 <div class="container-fluid">
@@ -213,7 +204,6 @@
                             alt="slide3">
                     </div>
                 </div>
-
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -230,14 +220,13 @@
         <!-- 팀원 이미지, 직책 -->
         <div class="container mt-5">
             <ul id="teamList" class="team-list">
-
             </ul>
         </div>
 
         <!-- 팀원 설명칸  -->
         <div class="intros">
-
         </div>
+
         <footer class="pt-3 mt-4 text-body-secondary  border-top">
             <ul class="footer-logos">
                 <li>
@@ -262,8 +251,8 @@
             <p class="copyright">© 2024 Why12 Project. All rights reserved.</p>
         </footer>
 
-        <!--화면상단이동버튼-->
-        <img src="https://i.ibb.co/FHc8FhZ/image.png" class="MoveTop-btn">
+        <!-- 화면 상단 이동 버튼-->
+        <img id="scrollToTopBtn" src="https://i.ibb.co/FHc8FhZ/image.png">
     </div>
     <script src="./main.js"></script>
     <script>

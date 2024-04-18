@@ -6,7 +6,7 @@ html, body {
     overflow-x: hidden;
 }
 
-/* splash screen */
+/* 스플래쉬 스크린 */
 .splash-screen {
     position: relative;
     overflow: hidden;
@@ -143,7 +143,7 @@ html, body {
 }
 
 
-/*스크롤상태바*/
+/* 스크롤 상태 바 */
 .header {
     position: fixed;
     top: 0;
@@ -163,22 +163,21 @@ html, body {
     transition: all .75s ease;
 }
 
+
+/* 전체 내용 */
 .all-content {
     display: none;
 }
 
 
+/* 캐러셀 */
 #caption {
-
     position: absolute;
     left: 10%;
     width: 100%;
     z-index: 2;
     pointer-events: none;
     color: white;
-
-
-
 }
 
 .carousel-item img {
@@ -188,6 +187,8 @@ html, body {
     object-position: center;
 }
 
+
+/* 팀 프로필 리스트 */
 .team-list {
     list-style: none;
     padding: 0;
@@ -244,7 +245,7 @@ html, body {
 }
 
 
-
+/* 팀원 소개 */
 .intro-title strong {
     font-size: 18px;
     font-weight: 300;
@@ -271,13 +272,9 @@ html, body {
     width:250px;
 }
 
-footer {
-    margin-bottom: 50px;
-    padding-left: 1rem;
-}
 
-/*화면상단 이동버튼 시작*/
-.MoveTop-btn {
+/* 화면 상단 이동 버튼 */
+#scrollToTopBtn {
     width: 75px;
     height: 75px;
     display: flex;
@@ -294,17 +291,18 @@ footer {
     color: black;
     margin-right: .4rem;
     opacity: 75%;
-    
-
-
 }
 
-.MoveTop-btn:hover {
+#scrollToTopBtn:hover {
     background: grey;
 }
 
-/*화면상단 이동버튼 끝*/
 
+/* 푸터 */
+footer {
+    margin-bottom: 50px;
+    padding-left: 1rem;
+}
 
 .footer-logos {
     display: flex;
