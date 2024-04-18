@@ -56,9 +56,13 @@ function calllate() {
             console.log(`#profileName${i}`);
             $(`#profileName${i}`).css('text-decoration', 'underline');
         })
+
+
+        $(`#profileBox${i}`).css("transition", "transform 500ms"); // 마우스 호버링 애니메이션 추가
         /********추가함***** *///마우스 호버링 기능
+
         $(`#profileBox${i}`).mouseover(function () {
-            $(this).css('transform', 'scale(1.2)');
+             $(this).css('transform', 'scale(1.2)');
             if ($(`#profileName${i}`).css('text-decoration-line') == 'none') {
                 $(`#profileImg${i}`).css('filter', 'grayscale(70%)');
             } else {
