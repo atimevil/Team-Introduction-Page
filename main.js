@@ -1,7 +1,3 @@
-
-
-
-
 /*스크롤상태바*/
 $(window).scroll(function() {
 
@@ -14,8 +10,6 @@ $(window).scroll(function() {
     $('#myBar').css('width', bar + '%');
   
   });
-
-
 
   //몰라서 손 안댐
 
@@ -48,6 +42,9 @@ function calllate() {
             for (let j = 1; j <= membernumbers; j++) {
                 $(`#Intro${j}`).hide();
                 $(`#profileImg${j}`).css('filter', 'grayscale(100%)');
+                
+                //index.html에서 클래스명 수정하고 쓰면 됩니다
+                //$('.profile-name').css('text-decoration', 'none');
             }
 
             $(`#Intro${i}`).toggle();
