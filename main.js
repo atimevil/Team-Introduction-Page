@@ -68,6 +68,10 @@ function calllate() {
     
 }
 
+$('.wip').click(() => {
+    alert('죄송합니다. 아직 준비 중인 페이지입니다.');
+})
+
 /*화면상단이동버튼*/
 const $Top_btn = document.querySelector(".MoveTop-btn");
 
