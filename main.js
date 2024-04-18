@@ -1,23 +1,13 @@
-/*스크롤상태바*/
+/* 스크롤 상태 바*/
 $(window).scroll(function () {
+    let currentScrollPosition = $(this).scrollTop();
+    let totalContentHeight = $('.all-content').outerHeight();
+    let windowHeight = $(window).outerHeight();
+    let scrollableHeight = totalContentHeight - windowHeight;
+    let scrollPercentage = (currentScrollPosition / scrollableHeight) * 100;
 
-    var wins = $(this).scrollTop();
-    var hei = $('.all-content').outerHeight();
-    var hei2 = $(window).outerHeight();
-    var height = hei - hei2;
-    var bar = (wins / height) * 100;
-
-
-    $('#myBar').css('width', bar + '%');
-
+    $('#progress-bar').css('width', scrollPercentage + '%');
 });
-
-//몰라서 손 안댐
-
-// $('#carouselExampleIndicators').carousel({
-//     interval: 5000,
-//     ride: "carousel"
-// });
 
 $('.profile-img').click(function () {
     $('html, body').animate({
