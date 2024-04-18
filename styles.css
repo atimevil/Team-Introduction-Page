@@ -124,6 +124,17 @@ html, body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
+.introimage {
+    float: left;
+    vertical-align: top;
+    width: 400px;
+    height: 350px;
+    border-radius: 0 150px 150px 0;
+    margin-left: 0px;
+    margin-right: 50px;
+    
+  }
+
 .intros {
     display: flex;
     justify-content: center;
