@@ -68,7 +68,7 @@ function calllate() {
     
 }
 
-/*화면상단이동버튼*/
+/*화면상단이동버튼 자바스크립트
 const $Top_btn = document.querySelector(".MoveTop-btn");
 
 //버튼 클릭시 페이지 상단으로 이동
@@ -78,4 +78,4 @@ $Top_btn.onclick = () => {
         behavior: "smooth"
     });
 };
-
+ */
