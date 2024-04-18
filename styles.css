@@ -152,6 +152,11 @@ html, body {
     color: #4b49a1;
 }
 
+.fulllSize{
+    height:250px;
+    width:250px;
+}
+
 footer {
     margin-bottom: 50px;
     padding-left: 1rem;

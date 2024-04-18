@@ -1,7 +1,3 @@
-
-
-
-
 /*스크롤상태바*/
 $(window).scroll(function() {
 
@@ -14,8 +10,6 @@ $(window).scroll(function() {
     $('#myBar').css('width', bar + '%');
   
   });
-
-
 
   //몰라서 손 안댐
 
@@ -48,6 +42,9 @@ function calllate() {
             for (let j = 1; j <= membernumbers; j++) {
                 $(`#Intro${j}`).hide();
                 $(`#profileImg${j}`).css('filter', 'grayscale(100%)');
+                
+                //index.html에서 클래스명 수정하고 쓰면 됩니다
+                //$('.profile-name').css('text-decoration', 'none');
             }
 
             $(`#Intro${i}`).toggle();
@@ -68,6 +65,31 @@ function calllate() {
     
 }
 
+/********** 클릭시 색상추가 및 밑줄 **************************************************/
+// $('#johnProfileImg').click(() => {
+//     $('#johnProfileImg').css('filter', 'grayscale(0%)');
+//     $('#johnIntro').toggle();
+//     $('#johnProfileName').css('text-decoration', 'underline');
+// });
+
+/********** 마우스 호버링 기능 ***************************************************/
+// $('#johnProfileBox').mouseover(function() {
+//     $(this).css('transform', 'scale(1.2)');
+//     if($('#johnProfileName').css('text-decoration-line') == 'none') {
+//         $('#johnProfileImg').css('filter', 'grayscale(70%)');
+//     } else{
+//         $('#johnProfileImg').css('filter', 'grayscale(0%)');
+//     }
+// });
+// $('#johnProfileBox').mouseout(function() {
+//     $(this).css('transform', 'scale(1.0)');
+//     if ($('#johnProfileName').css('text-decoration-line') == 'none') {
+//         $('#johnProfileImg').css('filter', 'grayscale(100%)');
+//     } else{
+//         $('#johnProfileImg').css('filter', 'grayscale(0%)');
+//     }
+// });
+
 $('.wip').click(() => {
     alert('죄송합니다. 아직 준비 중인 페이지입니다.');
 })
@@ -82,4 +104,3 @@ $Top_btn.onclick = () => {
         behavior: "smooth"
     });
 };
-
