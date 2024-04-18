@@ -21,6 +21,8 @@ html, body {
 
 .navbar-brand {
     color: white !important;
+    font-size: 30px;
+    font-weight: 900;
 }
 
 .navbar-nav .nav-item {
