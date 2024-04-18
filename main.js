@@ -13,16 +13,16 @@ $(window).scroll(function () {
 
 //몰라서 손 안댐
 
-$('#carouselExampleIndicators').carousel({
-    interval: 5000,
-    ride: "carousel"
-});
+// $('#carouselExampleIndicators').carousel({
+//     interval: 5000,
+//     ride: "carousel"
+// });
 
-$('.profile-img').click(function () {
-    $('html, body').animate({
-        scrollTop: $(this).offset().top - 100
-    }, 0, 'linear');
-});
+// $('.profile-img').click(function () {
+//     $('html, body').animate({
+//         scrollTop: $(this).offset().top - 100
+//     }, 0, 'linear');
+// });
 
 
 // 함수 전체 묶어서 append 하면 호출
