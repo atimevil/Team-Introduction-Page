@@ -75,24 +75,20 @@
                 </div>
         </div>`)
 
-        // 함수를 calllate로 묶어서 늦게 부름 -> main.js가 실행 된 후 함수를 수동으로 호출
-        calllate();
-    });
-
-    /*화면상단이동버튼*/
-    const $Top_btn = document.querySelector(".MoveTop-btn");
-
-    //버튼 클릭시 페이지 상단으로 이동
-    $Top_btn.onclick = () => {
-        window.scrollTo({
-            top: 0,    //페이지 총 Height
-            behavior: "smooth"
+            // 함수를 calllate로 묶어서 늦게 부름 -> main.js가 실행 된 후 함수를 수동으로 호출
+            calllate();
         });
-    };
 
+        $('.wip').click(() => alert('죄송합니다. 아직 준비 중인 페이지입니다.'));
 
-
-</script>
+        /*화면상단이동버튼*/
+        $(".MoveTop-btn").click(() => {
+            window.scrollTo({
+                top: 0,    //페이지 총 Height
+                behavior: "smooth"
+            });
+        });
+    </script>
 
 <body>
     <!--스크롤상태바-->
@@ -145,8 +141,8 @@
                 </div>
             </div>
 
-            
-<!--     <div class="container mt-5">
+
+            <!--     <div class="container mt-5">
         <ul class="team-list" id="teamListBox">
             <li id="johnProfileBox">
                 <div id="johnProfileImg" class="profile-img" tabindex="0"><img
@@ -156,7 +152,7 @@
             </li>
         </ul>
     </div> -->
-    
+
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
