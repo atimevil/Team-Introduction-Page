@@ -12,45 +12,48 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
 
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        // Your web app's Firebase configuration
-        // 파이어 베이스 연동
-        const firebaseConfig = {
-            apiKey: "AIzaSyA84CfIIHMFrm3IrXXQ1kbJbCnOJiUfMUE",
-            authDomain: "teamintro-15000.firebaseapp.com",
-            projectId: "teamintro-15000",
-            storageBucket: "teamintro-15000.appspot.com",
-            messagingSenderId: "213318217353",
-            appId: "1:213318217353:web:13bda26185a1b6cea82058",
-            measurementId: "G-JDLMJ32ZC0"
-        };
+</head>
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+<script type="module">
+    // Import the functions you need from the SDKs you need
 
-        //모듈안에서 전역변수 선언 (모듈밖에서는(전역변수 선언시 윈도우가 생략되어있음) )
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    // Your web app's Firebase configuration
+    // 파이어 베이스 연동
+    const firebaseConfig = {
+        apiKey: "AIzaSyA84CfIIHMFrm3IrXXQ1kbJbCnOJiUfMUE",
+        authDomain: "teamintro-15000.firebaseapp.com",
+        projectId: "teamintro-15000",
+        storageBucket: "teamintro-15000.appspot.com",
+        messagingSenderId: "213318217353",
+        appId: "1:213318217353:web:13bda26185a1b6cea82058",
+        measurementId: "G-JDLMJ32ZC0"
+    };
 
-        // 시간 지연때문에 안됨, js파일을 먼저 불러옴
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-        let docs = await getDocs(collection(db, "team-member"));
-        docs.forEach((doc) => {
-            let row = doc.data();
+    //모듈안에서 전역변수 선언 (모듈밖에서는(전역변수 선언시 윈도우가 생략되어있음) )
 
-            let image = row['image'];
-            let name = row['name'];
-            let job = row['job'];
-            let description = row['description'];
-            var memberImages = document.querySelectorAll('.profile-img');
-            //window 를 붙이면 전역 변수가 돼서 모듈안에서도 다른 파일에서 접근 가능
-            window.membernumbers = memberImages.length + 1;
-            let temp_html = `
+    // 시간 지연때문에 안됨, js파일을 먼저 불러옴
+
+    let docs = await getDocs(collection(db, "team-member"));
+    docs.forEach((doc) => {
+        let row = doc.data();
+
+        let image = row['image'];
+        let name = row['name'];
+        let job = row['job'];
+        let description = row['description'];
+        var memberImages = document.querySelectorAll('.profile-img');
+        //window 를 붙이면 전역 변수가 돼서 모듈안에서도 다른 파일에서 접근 가능
+        window.membernumbers = memberImages.length + 1;
+        let temp_html = `
             <ul class="team-list">
                 <li>
                     <div id = "profileImg${window.membernumbers}" class="profile-img">
@@ -62,10 +65,10 @@
                     </div>
                 </li>
             </ul>`;
-            $('#teamList').append(temp_html);
+        $('#teamList').append(temp_html);
 
-            //설명칸 추가
-            $('.intros').append(` <div id="Intro${window.membernumbers}" class="intro">
+        //설명칸 추가
+        $('.intros').append(` <div id="Intro${window.membernumbers}" class="intro">
             <div class="intro-title">
                 <strong>${job}</strong>
                 <em>David</em>
@@ -78,17 +81,6 @@
         // 함수를 calllate로 묶어서 늦게 부름 -> main.js가 실행 된 후 함수를 수동으로 호출
         calllate();
     });
-
-    /*화면상단이동버튼*/
-    const $Top_btn = document.querySelector(".MoveTop-btn");
-
-    //버튼 클릭시 페이지 상단으로 이동
-    $Top_btn.onclick = () => {
-        window.scrollTo({
-            top: 0,    //페이지 총 Height
-            behavior: "smooth"
-        });
-    };
 
 
 
@@ -107,33 +99,10 @@
 
         <!--메인슬라이드-->
         <div class="main">
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="./index.html">Why12</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <div class="wip">
-                                    <a class="nav-link" aria-current="page" href="#">Why12 소개</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a id="ourPeople" class="nav-link" href="./index.html">우리 사람들</a>
-                            </li>
-                            <li class="nav-item">
-                                <div class="wip">
-                                    <a class="nav-link" href="#">채용 정보</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
             <div id="caption" class="container py-4">
+                <!-- <header class="pb-3 mb-4 border-bottom"> -->
+                <span class="fs-4">Team Introduction</span>
+                <!-- </header> -->
                 <div class="p-5 mb-4 bg-body-tertiary rounded-3">
                     <div class="container-fluid py-5">
                         <h1 class="display-5 fw-bold">팀원을 소개합니다!</h1>
@@ -145,18 +114,6 @@
                 </div>
             </div>
 
-            
-<!--     <div class="container mt-5">
-        <ul class="team-list" id="teamListBox">
-            <li id="johnProfileBox">
-                <div id="johnProfileImg" class="profile-img" tabindex="0"><img
-                        src="https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg" alt="John"></div>
-                <h3 id="johnProfileName" class="profile-name">John</h3>
-                <p>Frontend 개발</p>
-            </li>
-        </ul>
-    </div> -->
-    
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
