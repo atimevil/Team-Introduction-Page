@@ -224,7 +224,16 @@ html, body {
 .profile-img img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
-
+/****************수정중******************/
+.introimage {
+    float: left;
+    vertical-align: top;
+    width: 400px;
+    height: 350px;
+    border-radius: 0 150px 150px 0;
+    margin: -359px 0px 0px -427px;
+  }
+/*****************************************/
 .intros {
     display: flex;
     justify-content: center;
@@ -233,6 +242,8 @@ html, body {
     background-color: #f9f9f9;
     margin-top: 50px;
 }
+
+
 
 .intro-title strong {
     font-size: 18px;

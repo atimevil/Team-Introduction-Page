@@ -46,15 +46,23 @@
             let image = row['image'];
             let name = row['name'];
             let job = row['job'];
-            let description = row['description'];
+            let memberAge = row['memberAge'];
+            let memberMbti = row['memberMbti'];
+            let memberHobby = row['memberHobby'];
+            let memberStrength = row['memberStrength'];
+            let memberStyle = row['memberStyle'];
+            let memberQuotation = row['memberQuotation'];
+            let memberEmail = row['memberEmail'];
+
+
             var memberImages = document.querySelectorAll('.profile-img');
             //window 를 붙이면 전역 변수가 돼서 모듈안에서도 다른 파일에서 접근 가능
             window.membernumbers = memberImages.length + 1;
             //**********li id 추가 및 프로필이름 id 추가
             let temp_html = `
             <ul class="team-list">
-                <li id="profileBox${window.membernumbers}">
-                    <div id="profileImg${window.membernumbers}" class="profile-img">
+                <li id="profileBox${window.membernumbers}" >
+                    <div id="profileImg${window.membernumbers}" class="profile-img" >
                         <img src="${image}" alt="">
                     </div>
                     <div class="profile-info">
@@ -66,15 +74,30 @@
             $('#teamList').append(temp_html);
 
             //설명칸 추가
-            $('.intros').append(` <div id="Intro${window.membernumbers}" class="intro">
+            $('.intros').append(` 
+            
+            <div id="Intro${window.membernumbers}" class="intro" style="margin-left: 357px;width:600px; height:400px;">
+            
             <div class="intro-title">
-                <strong>${job}</strong>
-                <em>${name}</em>
+                    <strong>${job}</strong>
+                    <em>${name}</em>
             </div>
-            <div class="intro-txt">
-                ${description}
+            
+                <div class="intro-txt">
+                    <p> 나이:  ${memberAge}</p>
+                    <p> MBTI: ${memberMbti}</p>
+                    <p> 취미: ${memberHobby}</p>
+                    <p>   장점:  ${memberStrength}</p>
+                    <p> 협업 스타일:  ${memberStyle}</p>
+                    <p>좌우명: ${memberQuotation}</p>
+                    <p> 이메일: ${memberEmail}</p>
                 </div>
-        </div>`)
+            <div>
+                <img class="introimage" src="${image}" alt="">
+            </div>
+            </div>
+            
+            `)
 
             // 함수를 calllate로 묶어서 늦게 부름 -> main.js가 실행 된 후 함수를 수동으로 호출
             calllate();
@@ -216,8 +239,21 @@
 
         </div>
         <footer class="pt-3 mt-4 text-body-secondary  border-top">
-            © 2024 
+            © 2024
         </footer>
+
+        <!--<div class="container mt-5">
+        <ul class="team-list" id="teamListBox">
+            <li id="johnProfileBox">
+                <div id="johnProfileImg" class="profile-img" tabindex="0"><img
+                        src="https://image.newsis.com/2023/07/12/NISI20230712_0001313626_web.jpg" alt="John"></div>
+                <h3 id="johnProfileName" class="profile-name">John</h3>
+                <p>Frontend 개발</p>
+            </li>
+        </ul>
+        </div> -->
+
+        <!--화면상단이동버튼-->
         <img src="https://i.ibb.co/FHc8FhZ/image.png" class="MoveTop-btn">
     </div>
     <script src="./main.js"></script>
