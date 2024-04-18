@@ -1,6 +1,25 @@
 
 
+
 $(document).ready(function () {
+
+/*스크롤상태바*/
+$(window).scroll(function() {
+
+    var wins = $(this).scrollTop();
+    var hei = $('.all-content').outerHeight();
+    var hei2 = $(window).outerHeight();
+    var height = hei - hei2;
+    var bar = (wins / height) * 100;
+  
+    $('#myBar').css('width', bar + '%');
+  
+  });
+
+
+
+
+
     $('#carouselExampleIndicators').carousel({
         interval: 5000,
         ride: "carousel"
@@ -11,6 +30,7 @@ $('.profile-img').click(function () {
         scrollTop: $(this).offset().top - 100
     }, 0, 'linear');
 });
+
   
 // 함수 전체 묶어서 append 하면 호출
 function calllate() {
@@ -48,4 +68,15 @@ function calllate() {
     }
     
 }
+
+/*화면상단이동버튼*/
+const $Top_btn = document.querySelector(".MoveTop-btn");
+
+//버튼 클릭시 페이지 상단으로 이동
+$Top_btn.onclick = () => {
+    window.scrollTo({
+        top: 0,    //페이지 총 Height
+        behavior: "smooth"
+    });
+};
 
