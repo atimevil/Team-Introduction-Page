@@ -55,6 +55,7 @@ function calllate() {
             $(`#profileImg${i}`).css('filter', 'grayscale(0%)');
             console.log(`#profileName${i}`);
             $(`#profileName${i}`).css('text-decoration', 'underline');
+            $(`#profileName${i}`).css('text-underline-offset', '5px');
         })
 
 
