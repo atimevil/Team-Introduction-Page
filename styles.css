@@ -2,14 +2,80 @@
     font-family: Gilroy;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
+/* 네비게이션 바 */
+.navbar {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    background-color: transparent;
+    margin: 30px;
+}
+
+#navbarNav {
+    margin-right: 30px;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 20px;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-underline-offset: 5px;
+}
+
+#ourPeople {
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-underline-offset: 5px;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+
+/*스크롤상태바*/
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #f1f1f1;
+  }
+  .progress-container {
+    width: 100%;
+    height: 3px;
+    background: #ccc;
+  }
+  .progress-bar {
+    height: 3px;
+    background: #2c2a52;
+    width: 0%;
+    transition: all .75s ease;
+  }
+
+
 #caption {
-  position: absolute;
-  left: 10%;
-  width: 100%;
-  z-index: 2;
-  pointer-events: none;
-  color: white;
-  
+
+    position: absolute;
+    left: 10%;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+    color: white;
+
+
+
 }
 
 .carousel-item img {
@@ -42,13 +108,14 @@
     object-fit: cover;
 }
 
-.team-list h3, .team-list p {
+.team-list h3,
+.team-list p {
     margin: 5px 0;
 }
 
 .profile-img {
-  cursor: pointer;
-  transition: filter 0.3s ease;
+    cursor: pointer;
+    transition: filter 0.3s ease;
 }
 
 .profile-img img {
@@ -94,3 +161,32 @@ footer {
     margin-bottom: 50px;
     padding-left: 1rem;
 }
+
+/*화면상단 이동버튼 시작*/
+.MoveTop-btn {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    padding: 1rem 1rem;
+    background: gainsboro;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .3s;
+    color: black;
+    margin-right: .4rem;
+    opacity: 75%;
+    
+
+
+}
+
+.MoveTop-btn:hover {
+    background: grey;
+}
+
+/*화면상단 이동버튼 끝*/

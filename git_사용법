@@ -45,5 +45,9 @@
    - .을 안치면 폴더가 새로생성
 
 6. git pull(팀원이 코드변경후 저장)
+   - git pull origin main
    - push 했는데 안되면 pull 하기
    -  pull 했는데 안되면 hint 맨위에꺼 복붙
+
+7. git merge 메인으로 합칠 브랜치명
+   - main 으로 이동해서 코드를 합친다

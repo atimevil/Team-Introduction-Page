@@ -1,114 +1,106 @@
-$(document).ready(function () {
-    $('.intro').hide();
-    $('.profile-img').css('filter', 'grayscale(100%)');
-    $('#johnProfileImg').css('filter', 'grayscale(0%)');
-    $('#johnProfileName').css('text-decoration', 'underline');
-    $('#johnIntro').show();
+/*스크롤상태바*/
+$(window).scroll(function() {
+
+    var wins = $(this).scrollTop();
+    var hei = $('.all-content').outerHeight();
+    var hei2 = $(window).outerHeight();
+    var height = hei - hei2;
+    var bar = (wins / height) * 100;
+  
+    $('#myBar').css('width', bar + '%');
+  
+  });
+
+  //몰라서 손 안댐
+
     $('#carouselExampleIndicators').carousel({
         interval: 5000,
         ride: "carousel"
     });
-});
 
 $('.profile-img').click(function () {
     $('html, body').animate({
         scrollTop: $(this).offset().top - 100
     }, 0, 'linear');
-    $('.intro').hide();
-    $('.profile-name').css('text-decoration', 'none');
-    $('.profile-img').css('filter', 'grayscale(100%)');
 });
+
+  
+// 함수 전체 묶어서 append 하면 호출
+function calllate() {
+    
+    //기본적으로 설명칸 닫기,흑백 만들기
+    for (let i = 1; i <= membernumbers; i++) {
+        $(`#Intro${i}`).hide();
+        $(`#profileImg${i}`).css('filter', 'grayscale(100%)');
+    }
+   
+
+    // 팀 설명 모두 숨긴후 ,선택한 팀원 설명만 토글하기
+    for (let i = 1; i <= membernumbers; i++) {
+       
+        $(`#profileImg${i}`).click(function () {
+            for (let j = 1; j <= membernumbers; j++) {
+                $(`#Intro${j}`).hide();
+                $(`#profileImg${j}`).css('filter', 'grayscale(100%)');
+                
+                //index.html에서 클래스명 수정하고 쓰면 됩니다
+                //$('.profile-name').css('text-decoration', 'none');
+            }
+
+            $(`#Intro${i}`).toggle();
+            $(`#profileImg${i}`).css('filter', 'grayscale(0%)');
+
+            // 동적 변수가 생겨서  for 문으로 반복문 만듦
+            // $('#kevinProfileImg').click(() => {
+            //     $('.intro').hide();
+            //     $('.profile-img').css('filter', 'grayscale(100%)');
+            //     $('#kevinProfileImg').css('filter', 'grayscale(0%)');
+            //     $('.profile-name').css('text-decoration', 'none');
+            //     $('#kevin').css('text-decoration', 'underline');
+            //     $('#kevinIntro').toggle();
+            // });
+            
+        })
+    }
+    
+}
 
 /********** 클릭시 색상추가 및 밑줄 **************************************************/
-$('#johnProfileImg').click(() => {
-    $('#johnProfileImg').css('filter', 'grayscale(0%)');
-    $('#johnIntro').toggle();
-    $('#johnProfileName').css('text-decoration', 'underline');
-});
-$('#davidProfileImg').click(() => {
-    $('#davidProfileImg').css('filter', 'grayscale(0%)');
-    $('#davidIntro').toggle();
-    $('#davidProfileName').css('text-decoration', 'underline');
-});
-$('#arialProfileImg').click(() => {
-    $('#arialProfileImg').css('filter', 'grayscale(0%)');
-    $('#arialIntro').toggle();
-    $('#arialProfileName').css('text-decoration', 'underline');
-});
-$('#kevinProfileImg').click(() => {
-    $('#kevinProfileImg').css('filter', 'grayscale(0%)');
-    $('#kevinIntro').toggle();
-    $('#kevinProfileName').css('text-decoration', 'underline');
-});
+// $('#johnProfileImg').click(() => {
+//     $('#johnProfileImg').css('filter', 'grayscale(0%)');
+//     $('#johnIntro').toggle();
+//     $('#johnProfileName').css('text-decoration', 'underline');
+// });
 
 /********** 마우스 호버링 기능 ***************************************************/
-$('#johnProfileBox').mouseover(function() {
-    $(this).css('transform', 'scale(1.2)');
-    if($('#johnProfileName').css('text-decoration-line') == 'none') {
-        $('#johnProfileImg').css('filter', 'grayscale(70%)');
-    } else{
-        $('#johnProfileImg').css('filter', 'grayscale(0%)');
-    }
-});
-$('#johnProfileBox').mouseout(function() {
-    $(this).css('transform', 'scale(1.0)');
-    if ($('#johnProfileName').css('text-decoration-line') == 'none') {
-        $('#johnProfileImg').css('filter', 'grayscale(100%)');
-    } else{
-        $('#johnProfileImg').css('filter', 'grayscale(0%)');
-    }
-});
-$('#davidProfileBox').mouseover(function() {
-    $(this).css('transform', 'scale(1.2)');
-    if($('#davidProfileName').css('text-decoration-line') == 'none') {
-        $('#davidProfileImg').css('filter', 'grayscale(70%)');
-    } else{
-        $('#davidProfileImg').css('filter', 'grayscale(0%)');
-    }
-});
-$('#davidProfileBox').mouseout(function() {
-    $(this).css('transform', 'scale(1.0)');
-    if ($('#davidProfileName').css('text-decoration-line') == 'none') {
-        $('#davidProfileImg').css('filter', 'grayscale(100%)');
-    } else{
-        $('#davidProfileImg').css('filter', 'grayscale(0%)');
-    }
-});
-$('#arialProfileBox').mouseover(function() {
-    $(this).css('transform', 'scale(1.2)');
-    if($('#arialProfileName').css('text-decoration-line') == 'none') {
-        $('#arialProfileImg').css('filter', 'grayscale(70%)');
-    } else{
-        $('#arialProfileImg').css('filter', 'grayscale(0%)');
-    }
-});
-$('#arialProfileBox').mouseout(function() {
-    $(this).css('transform', 'scale(1.0)');
-    if ($('#arialProfileName').css('text-decoration-line') == 'none') {
-        $('#arialProfileImg').css('filter', 'grayscale(100%)');
-    } else{
-        $('#arialProfileImg').css('filter', 'grayscale(0%)');
-    }
-});
-$('#kevinProfileBox').mouseover(function() {
-    $(this).css('transform', 'scale(1.2)');
-    if($('#kevinProfileName').css('text-decoration-line') == 'none') {
-        $('#kevinProfileImg').css('filter', 'grayscale(70%)');
-    } else{
-        $('#kevinProfileImg').css('filter', 'grayscale(0%)');
-    }
-});
-$('#kevinProfileBox').mouseout(function() {
-    $(this).css('transform', 'scale(1.0)');
-    if ($('#kevinProfileName').css('text-decoration-line') == 'none') {
-        $('#kevinProfileImg').css('filter', 'grayscale(100%)');
-    } else{
-        $('#kevinProfileImg').css('filter', 'grayscale(0%)');
-    }
-});
+// $('#johnProfileBox').mouseover(function() {
+//     $(this).css('transform', 'scale(1.2)');
+//     if($('#johnProfileName').css('text-decoration-line') == 'none') {
+//         $('#johnProfileImg').css('filter', 'grayscale(70%)');
+//     } else{
+//         $('#johnProfileImg').css('filter', 'grayscale(0%)');
+//     }
+// });
+// $('#johnProfileBox').mouseout(function() {
+//     $(this).css('transform', 'scale(1.0)');
+//     if ($('#johnProfileName').css('text-decoration-line') == 'none') {
+//         $('#johnProfileImg').css('filter', 'grayscale(100%)');
+//     } else{
+//         $('#johnProfileImg').css('filter', 'grayscale(0%)');
+//     }
+// });
 
+$('.wip').click(() => {
+    alert('죄송합니다. 아직 준비 중인 페이지입니다.');
+})
 
+/*화면상단이동버튼*/
+const $Top_btn = document.querySelector(".MoveTop-btn");
 
-
-
-
+//버튼 클릭시 페이지 상단으로 이동
+$Top_btn.onclick = () => {
+    window.scrollTo({
+        top: 0,    //페이지 총 Height
+        behavior: "smooth"
+    });
+};
