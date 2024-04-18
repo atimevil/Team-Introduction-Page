@@ -10,8 +10,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    =======
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>팀 소개 페이지</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,7 +20,6 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script type="module" src="./main.js"></script>
-    >>>>>>> refs/remotes/origin/main
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Stylish&display=swap');
 
@@ -74,7 +71,7 @@
         }
     </style>
 
-    
+
     <script type="module">
         // Import the functions you need from the SDKs you need
 
@@ -102,14 +99,26 @@
 
             let image = $('#image').val();
             let name = $('#name').val();
-            let description = $('#description').val();
             let job = $('#job').val();
+            let memberMbti = $('#memberMbti').val();
+            let memberAge = $('#memberAge').val();
+            let memberHobby = $('#memberHobby').val();
+            let memberStrength = $('#memberStrength').val();
+            let memberStyle = $('#memberStyle').val();
+            let memberQuotation = $('#memberQuotation').val();
+            let memberEmail = $('#memberEmail').val();
 
             let doc = {
                 'image': image,
                 'name': name,
-                'description': description,
                 'job': job,
+                'memberMbti': memberMbti,
+                'memberAge': memberAge,
+                'memberHobby': memberHobby,
+                'memberStrength': memberStrength,
+                'memberStyle': memberStyle,
+                'memberQuotation': memberQuotation,
+                'memberEmail': memberEmail,
             };
             await addDoc(collection(db, "team-member"), doc);
             alert('저장 완료!');
@@ -124,7 +133,13 @@
             let image = row['image'];
             let name = row['name'];
             let job = row['job'];
-            let description = row['description'];
+            let memberMbti = row['memberMbti'];
+            let memberAge = row['memberAge'];
+            let memberHobby = row['memberHobby'];
+            let memberStrength = row['memberStrength'];
+            let memberStyle = row['memberStyle'];
+            let memberQuotation = row['memberQuotation'];
+            let memberEmail = row['memberEmail'];
             let temp_html = `
             <ul class="team-list">
                 <li>
@@ -134,6 +149,13 @@
                     <div class="profile-info">
                         <h3>${name}</h3>
                         <p>${job}</p>
+                        <p>${memberMbti}</p>
+                        <p>${memberAge}</p>
+                        <p>${memberHobby}</p>
+                        <p>${memberStrength}</p>
+                        <p>${memberStyle}</p>
+                        <p>${memberQuotation}</p>
+                        <p>${memberEmail}</p>
                     </div>
                 </li>
             </ul>`;
@@ -149,19 +171,6 @@
     </script>
 </head>
 
-<!--   팀원 설명 소개 이미지 클릭시 따로 불러오게 설정해야함 .,.                
-       <div class="intros">
-                        <div id="dynamic" class="intro"> 
-                            <div class="intro-title">
-                                <strong>${job}</strong>
-                                <em>${name}</em>
-                            </div>
-                            <div class="intro-txt">
-                                <p>${description}</p>
-                            </div>
-                        </div>
-                    </div>-->
-
 <body>
     <div class="mytitle">
         <h1>운영자 페이지 <a href="./index.html"><button type="button" class="btn btn-light">메인</button></a></h1>
@@ -174,15 +183,39 @@
         </div>
         <div class="form-floating mb-3">
             <input type="email" class="form-control" id="name" placeholder="name@example.com">
-            <label for="floatingInput">팀원 이름</label>
+            <label for="floatingInput">나의 이름</label>
         </div>
         <div class="form-floating mb-3">
             <input type="email" class="form-control" id="job" placeholder="name@example.com">
-            <label for="floatingInput">팀원 직책</label>
+            <label for="floatingInput">나의 직책</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="description" placeholder="name@example.com">
-            <label for="floatingInput">팀원 설명</label>
+            <input type="email" class="form-control" id="memberMbti" placeholder="name@example.com">
+            <label for="floatingInput">나의 MBTI</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="memberAge" placeholder="name@example.com">
+            <label for="floatingInput">나의 나이</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="memberHobby" placeholder="name@example.com">
+            <label for="floatingInput">나의 취미</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="memberStrength" placeholder="name@example.com">
+            <label for="floatingInput">나의 장점</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="memberStyle" placeholder="name@example.com">
+            <label for="floatingInput">나의 스타일</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="memberQuotation" placeholder="name@example.com">
+            <label for="floatingInput">나의 인생 명언</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="memberEmail" placeholder="name@example.com">
+            <label for="floatingInput">내 이메일</label>
         </div>
         <div class="mybtn">
             <button id="postingbtn" type="button" class="btn btn-primary">합류하기</button>
