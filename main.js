@@ -1,7 +1,6 @@
 
 
 
-$(document).ready(function () {
 
 /*스크롤상태바*/
 $(window).scroll(function() {
@@ -24,12 +23,25 @@ $(window).scroll(function() {
         interval: 5000,
         ride: "carousel"
     });
-});
+
 $('.profile-img').click(function () {
     $('html, body').animate({
         scrollTop: $(this).offset().top - 100
     }, 0, 'linear');
 });
+
+
+/*화면상단이동버튼*/
+const $Top_btn = document.querySelector(".MoveTop-btn");
+
+//버튼 클릭시 페이지 상단으로 이동
+$Top_btn.onclick = () => {
+    window.scrollTo({
+        top: 0,    //페이지 총 Height
+        behavior: "smooth"
+    });
+};
+
 
   
 // 함수 전체 묶어서 append 하면 호출
@@ -69,14 +81,4 @@ function calllate() {
     
 }
 
-/*화면상단이동버튼*/
-const $Top_btn = document.querySelector(".MoveTop-btn");
-
-//버튼 클릭시 페이지 상단으로 이동
-$Top_btn.onclick = () => {
-    window.scrollTo({
-        top: 0,    //페이지 총 Height
-        behavior: "smooth"
-    });
-};
 
