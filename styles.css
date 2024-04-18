@@ -304,3 +304,28 @@ footer {
 }
 
 /*화면상단 이동버튼 끝*/
+
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.footer-logos li {
+    margin-right: 20px;
+}
+
+.footer-logos img {
+    height: 40px;
+}
+
+.copyright {
+    margin: 20px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+    color: #000333;
+}
