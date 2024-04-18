@@ -46,8 +46,7 @@
             let image = row['image'];
             let name = row['name'];
             let job = row['job'];
-            let description = row['description'];
-            let memberAge = row['age'];
+            let memberAge = row['memberAge'];
             let memberMbti = row['memberMbti'];
             let memberHobby = row['memberHobby'];
             let memberStrength = row['memberStrength'];
@@ -81,13 +80,13 @@
                 <em>${name}</em>
             </div>
             <div class="intro-txt">
-             나이: ${age}
-             MBTI: ${memberMbti}
-             취미:   ${memberHobby}
-             장점:  ${memberStrength}
-             협업 스타일:  ${memberStyle}
-            좌우명:  ${memberQuotation}
-             이메일:   ${memberEmail}
+           <p> 나이:  ${memberAge}</p>
+            <p> MBTI: ${memberMbti}</p>
+            <p> 취미: ${memberHobby}</p>
+          <p>   장점:  ${memberStrength}</p>
+            <p> 협업 스타일:  ${memberStyle}</p>
+             <p>좌우명: ${memberQuotation}</p>
+            <p> 이메일: ${memberEmail}</p>
 
                 </div>
         </div>`)

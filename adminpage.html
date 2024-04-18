@@ -99,7 +99,6 @@
 
             let image = $('#image').val();
             let name = $('#name').val();
-            let description = $('#description').val();
             let job = $('#job').val();
             let memberMbti = $('#memberMbti').val();
             let memberAge = $('#memberAge').val();
@@ -112,7 +111,6 @@
             let doc = {
                 'image': image,
                 'name': name,
-                'description': description,
                 'job': job,
                 'memberMbti': memberMbti,
                 'memberAge': memberAge,
@@ -135,7 +133,6 @@
             let image = row['image'];
             let name = row['name'];
             let job = row['job'];
-            let description = row['description'];
             let memberMbti = row['memberMbti'];
             let memberAge = row['memberAge'];
             let memberHobby = row['memberHobby'];
@@ -152,7 +149,6 @@
                     <div class="profile-info">
                         <h3>${name}</h3>
                         <p>${job}</p>
-                        <p>${description}</p>
                         <p>${memberMbti}</p>
                         <p>${memberAge}</p>
                         <p>${memberHobby}</p>
@@ -192,10 +188,6 @@
         <div class="form-floating mb-3">
             <input type="email" class="form-control" id="job" placeholder="name@example.com">
             <label for="floatingInput">나의 직책</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="description" placeholder="name@example.com">
-            <label for="floatingInput">나의 설명</label>
         </div>
         <div class="form-floating mb-3">
             <input type="email" class="form-control" id="memberMbti" placeholder="name@example.com">
