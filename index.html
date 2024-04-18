@@ -50,14 +50,15 @@
             var memberImages = document.querySelectorAll('.profile-img');
             //window 를 붙이면 전역 변수가 돼서 모듈안에서도 다른 파일에서 접근 가능
             window.membernumbers = memberImages.length + 1;
+            //**********li id 추가 및 프로필이름 id 추가
             let temp_html = `
             <ul class="team-list">
-                <li>
-                    <div id = "profileImg${window.membernumbers}" class="profile-img">
+                <li id="profileBox${window.membernumbers}">
+                    <div id="profileImg${window.membernumbers}" class="profile-img">
                         <img src="${image}" alt="">
                     </div>
-                    <div class="profile-info" >
-                        <h3 class = profile-info${window.membernumbers}>${name}</h3>
+                    <div class="profile-info">
+                        <h3 id="profileName${window.membernumbers}">${name}</h3>
                         <p>${job}</p>
                     </div>
                 </li>
@@ -68,7 +69,7 @@
             $('.intros').append(` <div id="Intro${window.membernumbers}" class="intro">
             <div class="intro-title">
                 <strong>${job}</strong>
-                <em>David</em>
+                <em>${name}</em>
             </div>
             <div class="intro-txt">
                 ${description}
@@ -151,7 +152,6 @@
                     </div>
                 </div>
             </div>
-
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -188,11 +188,11 @@
                 </button>
             </div>
         </div>
-        <!-- 
-    팀원 이미지, 직책 -->
+
+        <!-- 팀원 이미지, 직책 -->
         <div class="container mt-5">
             <ul id="teamList" class="team-list">
-
+                
             </ul>
         </div>
 
