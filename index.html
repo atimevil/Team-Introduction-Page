@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script type="module" src="./main.js"></script>
+
 </head>
 
 <script type="module">
@@ -38,25 +38,9 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    $("#postingbtn").click(async function () {
+    //모듈안에서 전역변수 선언 (모듈밖에서는(전역변수 선언시 윈도우가 생략되어있음) )
 
-        let image = $('#image').val();
-        let name = $('#name').val();
-        let description = $('#description').val();
-        let job = $('#job').val();
-
-        let doc = {
-            'image': image,
-            'name': name,
-            'description': description,
-            'job': job,
-            
-        };
-        await addDoc(collection(db, "team-member"), doc);
-        alert('저장 완료!');
-        window.location.reload();
-    })
-
+    // 시간 지연때문에 안됨, js파일을 먼저 불러옴
 
     let docs = await getDocs(collection(db, "team-member"));
     docs.forEach((doc) => {
@@ -66,44 +50,39 @@
         let name = row['name'];
         let job = row['job'];
         let description = row['description'];
+        var memberImages = document.querySelectorAll('.profile-img');
+        //window 를 붙이면 전역 변수가 돼서 모듈안에서도 다른 파일에서 접근 가능
+        window.membernumbers = memberImages.length + 1;
         let temp_html = `
-        <ul class="team-list">
-            <li>
-                <div id = "${name}ProfileImg" class="profile-img" tabindex="0"" >
-                    <img src="${image}" alt="">
+            <ul class="team-list">
+                <li>
+                    <div id = "profileImg${window.membernumbers}" class="profile-img">
+                        <img src="${image}" alt="">
+                    </div>
+                    <div class="profile-info">
+                        <h3>${name}</h3>
+                        <p>${job}</p>
+                    </div>
+                </li>
+            </ul>`;
+        $('#teamList').append(temp_html);
+
+        //설명칸 추가
+        $('.intros').append(` <div id="Intro${window.membernumbers}" class="intro">
+            <div class="intro-title">
+                <strong>${job}</strong>
+                <em>David</em>
+            </div>
+            <div class="intro-txt">
+                ${description}
                 </div>
-                <div class="profile-info">
-                    <h3>${name}</h3>
-                    <p>${job}</p>
-                </div>
-            </li>
-        </ul>`;
-        $('#card').append(temp_html);
+        </div>`)
+
+        // 함수를 calllate로 묶어서 늦게 부름 -> main.js가 실행 된 후 함수를 수동으로 호출
+        calllate();
     });
 
 
-    //쿼리
-    let query = window.location.search.substr();
-
-    $(document).ready(function () {
-        $('.intro').hide();
-        $('.profile-img').css('filter', 'grayscale(100%)');
-        $('#carouselExampleIndicators').carousel({
-            interval: 5000,
-            ride: "carousel"
-        });
-    });
-    $('.profile-img').click(function () {
-        $('html, body').animate({
-            scrollTop: $(this).offset().top - 100
-        }, 0, 'linear');
-    });
-    $(`#${name}ProfileImg`).click(() => {
-        $('.intro').hide();
-        $('.profile-img').css('filter', 'grayscale(100%)');
-        $(`#${name}ProfileImg`).css('filter', 'grayscale(0%)');
-        $(`#${name}Intro`).toggle();
-    });
 
 </script>
 
@@ -158,23 +137,19 @@
         </div>
     </div>
     <div class="container mt-5">
-        <div id="card" class="row row-cols-1 row-cols-md-5 g-4">
-        </div>
+        <ul id="teamList" class="team-list">
+            
+        </ul>
     </div>
     <div class="intros">
-        <div id="dynamic" class="intro"> 
-            <div class="intro-title">
-                <strong>${job}</strong>
-                <em>${name}</em>
-            </div>
-            <div class="intro-txt">
-                <p>${description}</p>
-            </div>
-        </div>
+
     </div>
     <footer class="pt-3 mt-4 text-body-secondary border-top">
         © 2024
     </footer>
+
+    <!-- 모듈 지워야함, 이유: 모듈선언을 한 자바 스크립트 내부에서는 작성된 이벤트들이 실행되지 않습니다 실행을 위해서는 별도로 export를 해야됨 그래서 지워야함(원하) -->
+    <script src="./main.js"></script>
 </body>
 
 </html>

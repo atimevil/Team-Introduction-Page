@@ -3,16 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>팀 소개 페이지</title>
+    <link rel="stylesheet" href="./styles.css">
+    <title>운영자 페이지</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script type="module" src="./main.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Stylish&display=swap');
 
@@ -62,11 +60,9 @@
         .mybtn>button {
             margin-right: 5px;
         }
-
-        * {
-            font-family: Gilroy;
-        }
     </style>
+
+    
     <script type="module">
         // Import the functions you need from the SDKs you need
 
@@ -120,7 +116,7 @@
             let temp_html = `
             <ul class="team-list">
                 <li>
-                    <div class="profile-img tabindex="0"">
+                    <div class="profile-img">
                         <img src="${image}" alt="">
                     </div>
                     <div class="profile-info">
@@ -132,31 +128,18 @@
             $('#card').append(temp_html);
         });
 
-        
         //쿼리
         let query = window.location.search.substr();
+
+
 
 
     </script>
 </head>
 
-<!--   팀원 설명 소개 이미지 클릭시 따로 불러오게 설정해야함 .,.                
-       <div class="intros">
-                        <div id="dynamic" class="intro"> 
-                            <div class="intro-title">
-                                <strong>${job}</strong>
-                                <em>${name}</em>
-                            </div>
-                            <div class="intro-txt">
-                                <p>${description}</p>
-                            </div>
-                        </div>
-                    </div>-->
-
 <body>
     <div class="mytitle">
-        <h1>운영자 페이지 <a href="https://sillysillyman.github.io/team-introduction-page/"><button type="button"
-                    class="btn btn-light">메인</button></a></h1>
+        <h1>운영자 페이지 <a href="./index.html"><button type="button" class="btn btn-light">메인</button></a></h1>
         <p>저희 COMPANY에 합류하게 되신걸 축하 드립니다.</p>
     </div>
     <div class="mypostbox" id="postingbox">
@@ -176,19 +159,17 @@
             <input type="email" class="form-control" id="description" placeholder="name@example.com">
             <label for="floatingInput">팀원 설명</label>
         </div>
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="id" placeholder="name@example.com">
-            <label for="floatingInput">팀원 아이디</label>
-        </div>
         <div class="mybtn">
             <button id="postingbtn" type="button" class="btn btn-primary">합류하기</button>
             <button type="button" class="btn btn-outline-dark">삭제하기</button>
         </div>
     </div>
-    <div class="container mt-5">
-        <div id="card" class="row row-cols-1 row-cols-md-5 g-4">
+    <div class="mycards">
+        <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
         </div>
     </div>
+
+    <script type="module" src="./main.js"></script>
 
 </body>
 

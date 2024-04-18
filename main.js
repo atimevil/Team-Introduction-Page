@@ -8,29 +8,26 @@ $('.profile-img').click(function () {
     $('html, body').animate({
         scrollTop: $(this).offset().top - 100
     }, 0, 'linear');
+});
+function calllate() {
 
-});
-$('#johnProfileImg').click(() => { // 이거 어케 동적주지 ... name + profileImg
-    $('.intro').hide();
-    $('.profile-img').css('filter', 'grayscale(100%)');
-    $('#johnProfileImg').css('filter', 'grayscale(0%)');
-    $('#johnIntro').toggle();
-});
-$('#davidProfileImg').click(() => {
-    $('.intro').hide();
-    $('.profile-img').css('filter', 'grayscale(100%)');
-    $('#davidProfileImg').css('filter', 'grayscale(0%)');
-    $('#davidIntro').toggle();
-});
-$('#arialProfileImg').click(() => {
-    $('.intro').hide();
-    $('.profile-img').css('filter', 'grayscale(100%)');
-    $('#arialProfileImg').css('filter', 'grayscale(0%)');
-    $('#arialIntro').toggle();
-});
-$('#kevinProfileImg').click(() => {
-    $('.intro').hide();
-    $('.profile-img').css('filter', 'grayscale(100%)');
-    $('#kevinProfileImg').css('filter', 'grayscale(0%)');
-    $('#kevinIntro').toggle();
-});
+    for (let i = 1; i <= membernumbers; i++) {
+        $(`#Intro${i}`).hide();
+        $(`#profileImg${i}`).css('filter', 'grayscale(100%)');
+    }
+
+
+    for (let i = 1; i <= membernumbers; i++) {
+
+        $(`#profileImg${i}`).click(function () {
+            for (let j = 1; j <= membernumbers; j++) {
+                $(`#Intro${j}`).hide();
+                $(`#profileImg${j}`).css('filter', 'grayscale(100%)');
+            }
+
+            $(`#Intro${i}`).toggle();
+            $(`#profileImg${i}`).css('filter', 'grayscale(0%)');
+        })
+    }
+
+}

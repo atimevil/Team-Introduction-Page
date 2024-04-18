@@ -3,13 +3,12 @@
 }
 
 #caption {
-  position: absolute;
-  left: 10%;
-  width: 100%;
-  z-index: 2;
-  pointer-events: none;
-  color: white;
-  
+    position: absolute;
+    left: 10%;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+    color: white;
 }
 
 .carousel-item img {
@@ -42,13 +41,14 @@
     object-fit: cover;
 }
 
-.team-list h3, .team-list p {
+.team-list h3,
+.team-list p {
     margin: 5px 0;
 }
 
 .profile-img {
-  cursor: pointer;
-  transition: filter 0.3s ease;
+    cursor: pointer;
+    transition: filter 0.3s ease;
 }
 
 .profile-img img {
