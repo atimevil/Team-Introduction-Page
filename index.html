@@ -47,13 +47,13 @@
             let name = row['name'];
             let job = row['job'];
             let description = row['description'];
-            let memberAge = ow['age'];
-            let memberMbti = ow['memberMbtie'];
-            let memberHobby = ow['memberHobby'];
-            let memberStrength = ow['memberStrength'];
-            let memberStyle = ow['memberStyle'];
-            let memberQuotation = ow['memberQuotation'];
-            let memberEmail = ow['memberEmail'];
+            let memberAge = row['age'];
+            let memberMbti = row['memberMbti'];
+            let memberHobby = row['memberHobby'];
+            let memberStrength = row['memberStrength'];
+            let memberStyle = row['memberStyle'];
+            let memberQuotation = row['memberQuotation'];
+            let memberEmail = row['memberEmail'];
 
 
             var memberImages = document.querySelectorAll('.profile-img');
@@ -81,13 +81,13 @@
                 <em>${name}</em>
             </div>
             <div class="intro-txt">
-             "나이: "${age}
-             "MBTI: "${memberMbtie}
-             "취미: "  ${memberHobby}
-             "장점: " ${memberStrength}
-             "협업 스타일: " ${memberStyle}
-            "좌우명: " ${memberQuotation}
-             이메일 : ${descriptmemberEmailion}
+             나이: ${age}
+             MBTI: ${memberMbti}
+             취미:   ${memberHobby}
+             장점:  ${memberStrength}
+             협업 스타일:  ${memberStyle}
+            좌우명:  ${memberQuotation}
+             이메일:   ${memberEmail}
 
                 </div>
         </div>`)
