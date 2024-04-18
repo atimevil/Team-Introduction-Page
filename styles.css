@@ -2,6 +2,11 @@
     font-family: Gilroy;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
+
 /*스크롤상태바*/
 .header {
     position: fixed;
