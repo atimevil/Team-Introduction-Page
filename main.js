@@ -9,6 +9,7 @@ $(document).ready(function () {
         ride: "carousel"
     });
 });
+
 $('.profile-img').click(function () {
     $('html, body').animate({
         scrollTop: $(this).offset().top - 100
@@ -18,7 +19,7 @@ $('.profile-img').click(function () {
     $('.profile-img').css('filter', 'grayscale(100%)');
 });
 
-/********** 클릭시 색상추가 및 밑줄 ***************************************************/
+/********** 클릭시 색상추가 및 밑줄 **************************************************/
 $('#johnProfileImg').click(() => {
     $('#johnProfileImg').css('filter', 'grayscale(0%)');
     $('#johnIntro').toggle();
