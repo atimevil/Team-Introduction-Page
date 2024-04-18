@@ -1,3 +1,8 @@
+
+
+
+$(document).ready(function () {
+
 /*스크롤상태바*/
 $(window).scroll(function() {
 
@@ -14,13 +19,7 @@ $(window).scroll(function() {
 
 
 
-$(document).ready(function () {
-    $('.intro').hide();
-    $('.profile-img').css('filter', 'grayscale(100%)');
-    $('.profile-name').css('text-decoration', 'none');
-    $('#johnProfileImg').css('filter', 'grayscale(0%)');
-    $('#john').css('text-decoration', 'underline');
-    $('#johnIntro').show();
+
     $('#carouselExampleIndicators').carousel({
         interval: 5000,
         ride: "carousel"
@@ -31,39 +30,44 @@ $('.profile-img').click(function () {
         scrollTop: $(this).offset().top - 100
     }, 0, 'linear');
 });
-$('#johnProfileImg').click(() => {
-    $('.intro').hide();
-    $('.profile-img').css('filter', 'grayscale(100%)');
-    $('#johnProfileImg').css('filter', 'grayscale(0%)');
-    $('.profile-name').css('text-decoration', 'none');
-    $('#john').css('text-decoration', 'underline');
-    $('#johnIntro').toggle();
-});
-$('#davidProfileImg').click(() => {
-    $('.intro').hide();
-    $('.profile-img').css('filter', 'grayscale(100%)');
-    $('#davidProfileImg').css('filter', 'grayscale(0%)');
-    $('.profile-name').css('text-decoration', 'none');
-    $('#david').css('text-decoration', 'underline');
-    $('#davidIntro').toggle();
-});
-$('#arialProfileImg').click(() => {
-    $('.intro').hide();
-    $('.profile-img').css('filter', 'grayscale(100%)');
-    $('#arialProfileImg').css('filter', 'grayscale(0%)');
-    $('.profile-name').css('text-decoration', 'none');
-    $('#arial').css('text-decoration', 'underline');
-    $('#arialIntro').toggle();
-});
-$('#kevinProfileImg').click(() => {
-    $('.intro').hide();
-    $('.profile-img').css('filter', 'grayscale(100%)');
-    $('#kevinProfileImg').css('filter', 'grayscale(0%)');
-    $('.profile-name').css('text-decoration', 'none');
-    $('#kevin').css('text-decoration', 'underline');
-    $('#kevinIntro').toggle();
-});
 
+  
+// 함수 전체 묶어서 append 하면 호출
+function calllate() {
+    
+    //기본적으로 설명칸 닫기,흑백 만들기
+    for (let i = 1; i <= membernumbers; i++) {
+        $(`#Intro${i}`).hide();
+        $(`#profileImg${i}`).css('filter', 'grayscale(100%)');
+    }
+   
+
+    // 팀 설명 모두 숨긴후 ,선택한 팀원 설명만 토글하기
+    for (let i = 1; i <= membernumbers; i++) {
+       
+        $(`#profileImg${i}`).click(function () {
+            for (let j = 1; j <= membernumbers; j++) {
+                $(`#Intro${j}`).hide();
+                $(`#profileImg${j}`).css('filter', 'grayscale(100%)');
+            }
+
+            $(`#Intro${i}`).toggle();
+            $(`#profileImg${i}`).css('filter', 'grayscale(0%)');
+
+            // 동적 변수가 생겨서  for 문으로 반복문 만듦
+            // $('#kevinProfileImg').click(() => {
+            //     $('.intro').hide();
+            //     $('.profile-img').css('filter', 'grayscale(100%)');
+            //     $('#kevinProfileImg').css('filter', 'grayscale(0%)');
+            //     $('.profile-name').css('text-decoration', 'none');
+            //     $('#kevin').css('text-decoration', 'underline');
+            //     $('#kevinIntro').toggle();
+            // });
+            
+        })
+    }
+    
+}
 
 /*화면상단이동버튼*/
 const $Top_btn = document.querySelector(".MoveTop-btn");
