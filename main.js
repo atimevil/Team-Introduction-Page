@@ -12,7 +12,7 @@ $(window).scroll(function () {
 
 });
 
-  //몰라서 손 안댐
+//몰라서 손 안댐
 
 // $('#carouselExampleIndicators').carousel({
 //     interval: 5000,

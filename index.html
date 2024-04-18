@@ -74,22 +74,30 @@
             $('#teamList').append(temp_html);
 
             //설명칸 추가
-            $('.intros').append(` <div id="Intro${window.membernumbers}" class="intro" style="margin-left: 357px;">
+            $('.intros').append(` 
+            
+            <div id="Intro${window.membernumbers}" class="intro" style="margin-left: 357px;width:600px; height:400px;">
+            
             <div class="intro-title">
-                <strong>${job}</strong>
-                <em>${name}</em>
+                    <strong>${job}</strong>
+                    <em>${name}</em>
             </div>
-            <div class="intro-txt">
-           <p> 나이:  ${memberAge}</p>
-            <p> MBTI: ${memberMbti}</p>
-            <p> 취미: ${memberHobby}</p>
-          <p>   장점:  ${memberStrength}</p>
-            <p> 협업 스타일:  ${memberStyle}</p>
-             <p>좌우명: ${memberQuotation}</p>
-            <p> 이메일: ${memberEmail}</p>
-
+            
+                <div class="intro-txt">
+                    <p> 나이:  ${memberAge}</p>
+                    <p> MBTI: ${memberMbti}</p>
+                    <p> 취미: ${memberHobby}</p>
+                    <p>   장점:  ${memberStrength}</p>
+                    <p> 협업 스타일:  ${memberStyle}</p>
+                    <p>좌우명: ${memberQuotation}</p>
+                    <p> 이메일: ${memberEmail}</p>
                 </div>
-        </div>`)
+            <div>
+                <img class="introimage" src="${image}" alt="">
+            </div>
+            </div>
+            
+            `)
 
             // 함수를 calllate로 묶어서 늦게 부름 -> main.js가 실행 된 후 함수를 수동으로 호출
             calllate();
