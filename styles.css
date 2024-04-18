@@ -265,8 +265,13 @@ html, body {
 }
 
 .intro-txt span {
+    font-size: 24px;
     font-weight: 500;
     color: #4b49a1;
+}
+
+.blog-logo {
+    width: 36px;
 }
 
 /* .fulllSize{
