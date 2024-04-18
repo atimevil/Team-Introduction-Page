@@ -47,6 +47,15 @@
             let name = row['name'];
             let job = row['job'];
             let description = row['description'];
+            let memberAge = ow['age'];
+            let memberMbti = ow['memberMbtie'];
+            let memberHobby = ow['memberHobby'];
+            let memberStrength = ow['memberStrength'];
+            let memberStyle = ow['memberStyle'];
+            let memberQuotation = ow['memberQuotation'];
+            let memberEmail = ow['memberEmail'];
+
+
             var memberImages = document.querySelectorAll('.profile-img');
             //window 를 붙이면 전역 변수가 돼서 모듈안에서도 다른 파일에서 접근 가능
             window.membernumbers = memberImages.length + 1;
@@ -72,7 +81,14 @@
                 <em>${name}</em>
             </div>
             <div class="intro-txt">
-                ${description}
+             "나이: "${age}
+             "MBTI: "${memberMbtie}
+             "취미: "  ${memberHobby}
+             "장점: " ${memberStrength}
+             "협업 스타일: " ${memberStyle}
+              ${memberQuotation}
+             이메일 : ${descriptmemberEmailion}
+
                 </div>
         </div>`)
 
@@ -192,7 +208,7 @@
         <!-- 팀원 이미지, 직책 -->
         <div class="container mt-5">
             <ul id="teamList" class="team-list">
-                
+
             </ul>
         </div>
 
